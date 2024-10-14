@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CardComponent } from "../card/card.component";
 import { BackendApiService } from '../service/backend-api.service';
-import { Form, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -24,10 +24,10 @@ export class HomeComponent {
     this.service.getAllHotels().subscribe((response: any) => {
       this.hotels = response;
     })
-    console.log('Htoels', this.hotels);
+    console.log('Hotels', this.hotels);
   }
   
-  rating = new FormControl('');
+  rating = new FormControl('',[Validators.min(0),Validators.max(5)]);
   city = new FormControl('');
 
 
