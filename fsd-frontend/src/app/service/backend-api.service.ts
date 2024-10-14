@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BackendApiService {
 
-  apiGetHotels = "/v1"
+  apiGetHotels = "/api/v1"
 
 
   constructor(private httpClient: HttpClient) { }
