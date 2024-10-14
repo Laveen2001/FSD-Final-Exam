@@ -1,0 +1,28 @@
+networks:
+  fsd-network:
+    driver: bridge
+
+services:
+  angular-app:
+    image: frontendcomposeimg 
+    container_name: frontendcomposecontainer
+    build:
+      context: ./fsd-frontend 
+      dockerfile: Dockerfile 
+    ports:
+      - "80:80"  
+    depends_on:
+    - spring-boot-app  
+    networks:
+      - fsd-network
+
+  spring-boot-app:
+    image: backendcomposeimg  
+    container_name: backendcomposecontainer
+    build:
+      context: ./fsd-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8080"
+    networks:
+    - fsd-network

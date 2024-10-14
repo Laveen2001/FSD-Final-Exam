@@ -1,0 +1,30 @@
+
+
+<div class="card"> 
+    
+    <img [src]=imageUrl width="200px" height="200px"/>
+    <p>Name - {{name}}</p>
+    <p>City - {{city}}</p>
+    <p>Rating - {{rating}}</p>
+    <p>Price - {{roomPrice}}</p>
+
+
+    <p> Extra Info</p>
+
+    @if(wifi===true){
+        <h2> Wifi</h2>
+        <i class="fa-solid fa-wifi"></i>
+        <br>
+    }
+    @if(pool===true){
+        <h2> Pool</h2>
+        <i class="fa-solid fa-wifi"></i>
+        <br>
+    }
+    @if(gym===true){
+        <h2> Gym</h2>
+        <i class="fa-solid fa-dumbbell"></i>
+        <br>
+    }
+
+</div>

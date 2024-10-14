@@ -1,0 +1,36 @@
+<p>home works!</p>
+
+
+
+<form [formGroup]="filterFormGroup" class="form">
+
+    <input type="text" placeholder="Enter City" [formControl]="city">
+    <input type="text" placeholder="Enter Rating" [formControl]="rating">
+
+    <button (click)="filter()">FILTER</button>    
+
+</form>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div class="card-parent">
+
+@for (item of hotels; track $index) {
+    <app-card [name]=item?.name [rating]=item?.rating [roomPrice]=item?.roomPrice [city]=item?.city
+    
+    [wifi]=item?.wifi [pool]=item?.pool [gym]=item?.gym
+    [imageUrl]=item?.imageUrl
+    />
+}
+
+</div>
+
+
+
